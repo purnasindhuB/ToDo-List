@@ -77,6 +77,7 @@ class NewTaskModelView: UIView {
         guard let caption = descrptionTextView.text,
            caption.count > 4,
               descrptionTextView.textColor != UIColor.placeholderText else {
+            delegate?.presentErrorAlert(title: "Caption Error", message: "You need to provide a description with 4 or more characters")
             shakeAnimation()
             return
         }

@@ -8,6 +8,7 @@
 import UIKit
 protocol HandleCloseModuleDelegate: AnyObject {
     func closeModule()
+    func presentErrorAlert(title:String,message:String)
 }
 
 class NewTaskViewController: UIViewController{
@@ -51,6 +52,13 @@ class NewTaskViewController: UIViewController{
     }
 }
 extension NewTaskViewController : HandleCloseModuleDelegate {
+    func presentErrorAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
     func closeModule() {
         dismiss(animated: true)
     }
