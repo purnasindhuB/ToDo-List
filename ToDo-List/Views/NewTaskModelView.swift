@@ -75,27 +75,29 @@ class NewTaskModelView: UIView {
     
     @IBAction func submitBtnTapped(_ sender: Any) {
         guard let caption = descrptionTextView.text,
-              caption.count > 4 else{
+           caption.count > 4,
+              descrptionTextView.textColor != UIColor.placeholderText else {
+            shakeAnimation()
             return
         }
-        let selectedRow = categoryPickerView.selectedRow(inComponent: 0)
-        let category = Category.allCases[selectedRow]
-        if let task = task {
-            
-            let task = Task(id: task.id, category: category, caption: caption, constantDate: task.constantDate, isCompleted: task.isCompleted)
-            let userInfo = ["updateTask":task]
-            NotificationCenter.default.post(name: NSNotification.Name("com.sindhu.editTask") , object: self, userInfo: userInfo)
+            let selectedRow = categoryPickerView.selectedRow(inComponent: 0)
+            let category = Category.allCases[selectedRow]
+            if let task = task {
+                
+                let task = Task(id: task.id, category: category, caption: caption, constantDate: task.constantDate, isCompleted: task.isCompleted)
+                let userInfo = ["updateTask":task]
+                NotificationCenter.default.post(name: NSNotification.Name("com.sindhu.editTask") , object: self, userInfo: userInfo)
+            }
+            else {
+                let taskId = UUID().uuidString
+                let task = Task(id: taskId,category: category, caption: caption, constantDate: Date(), isCompleted: false)
+                let userInfo = ["newTask":task]
+                NotificationCenter.default.post(name: NSNotification.Name("com.sindhu.createTask") , object: self, userInfo: userInfo)
+            }
+            delegate?.closeModule()
         }
-        else {
-            let taskId = UUID().uuidString
-            let task = Task(id: taskId,category: category, caption: caption, constantDate: Date(), isCompleted: false)
-            let userInfo = ["newTask":task]
-            NotificationCenter.default.post(name: NSNotification.Name("com.sindhu.createTask") , object: self, userInfo: userInfo)
-        }
-        delegate?.closeModule()
-    }
-    
 }
+
 /// we have removed awakeNIB cuz it is not triggered due to top level obj connected to file owner
 
 extension NewTaskModelView :UITextViewDelegate {

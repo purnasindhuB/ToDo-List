@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var DateLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     var tasks : [Task] = []
     
@@ -24,12 +24,6 @@ class ViewController: UIViewController {
         button.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         return button
     }()
-    
-    private var dateFormatter : DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMM yyyy"
-        return  formatter
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +39,8 @@ class ViewController: UIViewController {
         view.addSubview(addBtn)
         NotificationCenter.default.addObserver(self, selector: #selector(createTask(_:)), name: notificationName, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateTask(_:)), name:  NSNotification.Name("com.sindhu.editTask") , object: nil)
-        DateLabel.text = "Tasks"
-        DateLabel.font = UIFont.style(.h1)
+        titleLabel.text = "Tasks"
+        titleLabel.font = UIFont.style(.h1)
     }
     
     override func viewDidLayoutSubviews() {
@@ -59,6 +53,7 @@ class ViewController: UIViewController {
         addBtn.frame = CGRect(x: xpos, y: ypos, width: width, height: height)
         addBtn.layer.cornerRadius = width / 2
     }
+    
     @IBAction func settingsTapped(_ sender: Any) {
         performSegue(withIdentifier: "settingsSegue", sender: nil)
     }
@@ -98,7 +93,7 @@ class ViewController: UIViewController {
 
 // MARK:UITableViewDelegate
 
-extension ViewController :UITableViewDelegate{
+extension HomeViewController :UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //        let task = tasks[indexPath.row]
         //        let taskVC = NewTaskViewController(task: task)
@@ -108,7 +103,7 @@ extension ViewController :UITableViewDelegate{
 }
 // MARK:UITableViewDataSource
 
-extension ViewController : UITableViewDataSource {
+extension HomeViewController : UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -132,7 +127,7 @@ extension ViewController : UITableViewDataSource {
 
 // MARK:TaskTableViewDelegate
 
-extension ViewController : TaskTableViewDelegate {
+extension HomeViewController : TaskTableViewDelegate {
     func editTask(id: String) {
         let task = tasks.first { task in
             task.id == id

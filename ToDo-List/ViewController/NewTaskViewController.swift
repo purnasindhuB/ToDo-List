@@ -37,7 +37,7 @@ class NewTaskViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         modalView.transform = CGAffineTransform(scaleX: 0, y: 0)
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         view.addSubview(modalView)
         
     }

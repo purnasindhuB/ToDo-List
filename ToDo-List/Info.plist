@@ -24,8 +24,6 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Assistant-SemiBold.ttf</string>
-		<string>Assistant-ExtraLight.ttf</string>
-		<string>Assistant-Regular.ttf</string>
 		<string>Assistant-Medium.ttf</string>
 		<string>Assistant-Bold.ttf</string>
 	</array>

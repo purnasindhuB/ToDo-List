@@ -12,25 +12,24 @@
 		47AF40AC2E09FAB8000E8840 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF40AB2E09FAB8000E8840 /* SettingsViewController.swift */; };
 		47AF937F2E01401100DD5126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF937E2E01401100DD5126 /* AppDelegate.swift */; };
 		47AF93812E01401100DD5126 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF93802E01401100DD5126 /* SceneDelegate.swift */; };
-		47AF93832E01401100DD5126 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF93822E01401100DD5126 /* ViewController.swift */; };
+		47AF93832E01401100DD5126 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF93822E01401100DD5126 /* HomeViewController.swift */; };
 		47AF93862E01401100DD5126 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47AF93842E01401100DD5126 /* Main.storyboard */; };
 		47AF93882E01401C00DD5126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47AF93872E01401C00DD5126 /* Assets.xcassets */; };
 		47AF938B2E01401C00DD5126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47AF93892E01401C00DD5126 /* LaunchScreen.storyboard */; };
 		47AF93932E01528000DD5126 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF93922E01528000DD5126 /* TaskTableViewCell.swift */; };
-		47B192C92E0D37C900B2A01F /* Assistant-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47B192C42E0D37C800B2A01F /* Assistant-ExtraLight.ttf */; };
-		47B192CA2E0D37C900B2A01F /* Assistant-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47B192C52E0D37C800B2A01F /* Assistant-Regular.ttf */; };
 		47B192CB2E0D37C900B2A01F /* Assistant-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47B192C62E0D37C900B2A01F /* Assistant-SemiBold.ttf */; };
 		47B192CC2E0D37C900B2A01F /* Assistant-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47B192C72E0D37C900B2A01F /* Assistant-Bold.ttf */; };
 		47B192CD2E0D37C900B2A01F /* Assistant-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47B192C82E0D37C900B2A01F /* Assistant-Medium.ttf */; };
 		47B192CF2E0D55B700B2A01F /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B192CE2E0D55B700B2A01F /* RoundedButton.swift */; };
 		47B192D12E0D5BA800B2A01F /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B192D02E0D5BA800B2A01F /* PillButton.swift */; };
 		47B192D32E0D5E8A00B2A01F /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B192D22E0D5E8A00B2A01F /* ShadowButton.swift */; };
+		47B192D92E0D91E700B2A01F /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B192D82E0D91E700B2A01F /* Animation.swift */; };
 		47C7F5E92E07E3FE00F31A60 /* ColorSet.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47C7F5E82E07E3FE00F31A60 /* ColorSet.xcassets */; };
 		47C7F5EB2E07E86400F31A60 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7F5EA2E07E86400F31A60 /* Extension+UIColor.swift */; };
 		47DC5DC22E01810700082058 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DC5DC12E01810700082058 /* NewTaskViewController.swift */; };
 		47DC5DC42E01884900082058 /* NewTaskModelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47DC5DC32E01884900082058 /* NewTaskModelView.xib */; };
 		47DC5DC62E01A0B100082058 /* NewTaskModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DC5DC52E01A0B100082058 /* NewTaskModelView.swift */; };
-		47DC5DC82E01AA1D00082058 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DC5DC72E01AA1D00082058 /* Category.swift */; };
+		47DC5DC82E01AA1D00082058 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DC5DC72E01AA1D00082058 /* CategoryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,26 +39,25 @@
 		47AF937B2E01401100DD5126 /* ToDo-List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo-List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47AF937E2E01401100DD5126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47AF93802E01401100DD5126 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		47AF93822E01401100DD5126 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		47AF93822E01401100DD5126 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		47AF93852E01401100DD5126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47AF93872E01401C00DD5126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47AF938A2E01401C00DD5126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47AF938C2E01401C00DD5126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47AF93922E01528000DD5126 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
-		47B192C42E0D37C800B2A01F /* Assistant-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Assistant-ExtraLight.ttf"; sourceTree = "<group>"; };
-		47B192C52E0D37C800B2A01F /* Assistant-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Assistant-Regular.ttf"; sourceTree = "<group>"; };
 		47B192C62E0D37C900B2A01F /* Assistant-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Assistant-SemiBold.ttf"; sourceTree = "<group>"; };
 		47B192C72E0D37C900B2A01F /* Assistant-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Assistant-Bold.ttf"; sourceTree = "<group>"; };
 		47B192C82E0D37C900B2A01F /* Assistant-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Assistant-Medium.ttf"; sourceTree = "<group>"; };
 		47B192CE2E0D55B700B2A01F /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		47B192D02E0D5BA800B2A01F /* PillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
 		47B192D22E0D5E8A00B2A01F /* ShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
+		47B192D82E0D91E700B2A01F /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		47C7F5E82E07E3FE00F31A60 /* ColorSet.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorSet.xcassets; sourceTree = "<group>"; };
 		47C7F5EA2E07E86400F31A60 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		47DC5DC12E01810700082058 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		47DC5DC32E01884900082058 /* NewTaskModelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTaskModelView.xib; sourceTree = "<group>"; };
 		47DC5DC52E01A0B100082058 /* NewTaskModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskModelView.swift; sourceTree = "<group>"; };
-		47DC5DC72E01AA1D00082058 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		47DC5DC72E01AA1D00082058 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,33 +90,88 @@
 		47AF937D2E01401100DD5126 /* ToDo-List */ = {
 			isa = PBXGroup;
 			children = (
+				47B192DC2E0D92F000B2A01F /* ViewController */,
+				47B192DB2E0D92D300B2A01F /* Components */,
+				47B192DA2E0D92A900B2A01F /* Views */,
+				47B192D62E0D8F9C00B2A01F /* Resources */,
+				47B192D52E0D8F5D00B2A01F /* Design */,
+				47B192D42E0D8F5200B2A01F /* Model */,
 				47AF937E2E01401100DD5126 /* AppDelegate.swift */,
 				47AF93802E01401100DD5126 /* SceneDelegate.swift */,
-				473E8BCF2E06023800B7B0E3 /* TaskModel.swift */,
-				47DC5DC72E01AA1D00082058 /* Category.swift */,
-				47AF93922E01528000DD5126 /* TaskTableViewCell.swift */,
-				47C7F5EA2E07E86400F31A60 /* Extension+UIColor.swift */,
-				47DC5DC12E01810700082058 /* NewTaskViewController.swift */,
-				47AF40AB2E09FAB8000E8840 /* SettingsViewController.swift */,
-				47AF93822E01401100DD5126 /* ViewController.swift */,
-				47B192CE2E0D55B700B2A01F /* RoundedButton.swift */,
-				47DC5DC52E01A0B100082058 /* NewTaskModelView.swift */,
-				47B192D02E0D5BA800B2A01F /* PillButton.swift */,
-				47B192D22E0D5E8A00B2A01F /* ShadowButton.swift */,
-				47B192C72E0D37C900B2A01F /* Assistant-Bold.ttf */,
-				47B192C42E0D37C800B2A01F /* Assistant-ExtraLight.ttf */,
-				47B192C82E0D37C900B2A01F /* Assistant-Medium.ttf */,
-				47B192C52E0D37C800B2A01F /* Assistant-Regular.ttf */,
-				47B192C62E0D37C900B2A01F /* Assistant-SemiBold.ttf */,
-				47DC5DC32E01884900082058 /* NewTaskModelView.xib */,
 				47AF93842E01401100DD5126 /* Main.storyboard */,
 				47AF93872E01401C00DD5126 /* Assets.xcassets */,
-				47C7F5E82E07E3FE00F31A60 /* ColorSet.xcassets */,
 				47AF93892E01401C00DD5126 /* LaunchScreen.storyboard */,
 				47AF938C2E01401C00DD5126 /* Info.plist */,
-				47A4351F2E0B54990092BA5A /* Typography.swift */,
 			);
 			path = "ToDo-List";
+			sourceTree = "<group>";
+		};
+		47B192D42E0D8F5200B2A01F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				473E8BCF2E06023800B7B0E3 /* TaskModel.swift */,
+				47DC5DC72E01AA1D00082058 /* CategoryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		47B192D52E0D8F5D00B2A01F /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				47B192D82E0D91E700B2A01F /* Animation.swift */,
+				47C7F5EA2E07E86400F31A60 /* Extension+UIColor.swift */,
+				47A4351F2E0B54990092BA5A /* Typography.swift */,
+				47C7F5E82E07E3FE00F31A60 /* ColorSet.xcassets */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		47B192D62E0D8F9C00B2A01F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				47B192D72E0D8FAF00B2A01F /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		47B192D72E0D8FAF00B2A01F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				47B192C72E0D37C900B2A01F /* Assistant-Bold.ttf */,
+				47B192C82E0D37C900B2A01F /* Assistant-Medium.ttf */,
+				47B192C62E0D37C900B2A01F /* Assistant-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		47B192DA2E0D92A900B2A01F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47DC5DC32E01884900082058 /* NewTaskModelView.xib */,
+				47DC5DC52E01A0B100082058 /* NewTaskModelView.swift */,
+				47AF93922E01528000DD5126 /* TaskTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		47B192DB2E0D92D300B2A01F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				47B192CE2E0D55B700B2A01F /* RoundedButton.swift */,
+				47B192D02E0D5BA800B2A01F /* PillButton.swift */,
+				47B192D22E0D5E8A00B2A01F /* ShadowButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		47B192DC2E0D92F000B2A01F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				47AF93822E01401100DD5126 /* HomeViewController.swift */,
+				47AF40AB2E09FAB8000E8840 /* SettingsViewController.swift */,
+				47DC5DC12E01810700082058 /* NewTaskViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,8 +237,6 @@
 				47C7F5E92E07E3FE00F31A60 /* ColorSet.xcassets in Resources */,
 				47AF938B2E01401C00DD5126 /* LaunchScreen.storyboard in Resources */,
 				47DC5DC42E01884900082058 /* NewTaskModelView.xib in Resources */,
-				47B192C92E0D37C900B2A01F /* Assistant-ExtraLight.ttf in Resources */,
-				47B192CA2E0D37C900B2A01F /* Assistant-Regular.ttf in Resources */,
 				47AF93882E01401C00DD5126 /* Assets.xcassets in Resources */,
 				47B192CD2E0D37C900B2A01F /* Assistant-Medium.ttf in Resources */,
 				47AF93862E01401100DD5126 /* Main.storyboard in Resources */,
@@ -201,15 +252,16 @@
 			files = (
 				47AF93932E01528000DD5126 /* TaskTableViewCell.swift in Sources */,
 				47DC5DC22E01810700082058 /* NewTaskViewController.swift in Sources */,
-				47AF93832E01401100DD5126 /* ViewController.swift in Sources */,
+				47AF93832E01401100DD5126 /* HomeViewController.swift in Sources */,
 				47AF40AC2E09FAB8000E8840 /* SettingsViewController.swift in Sources */,
 				47DC5DC62E01A0B100082058 /* NewTaskModelView.swift in Sources */,
 				47B192D32E0D5E8A00B2A01F /* ShadowButton.swift in Sources */,
-				47DC5DC82E01AA1D00082058 /* Category.swift in Sources */,
+				47DC5DC82E01AA1D00082058 /* CategoryModel.swift in Sources */,
 				47B192D12E0D5BA800B2A01F /* PillButton.swift in Sources */,
 				47AF937F2E01401100DD5126 /* AppDelegate.swift in Sources */,
 				47B192CF2E0D55B700B2A01F /* RoundedButton.swift in Sources */,
 				47C7F5EB2E07E86400F31A60 /* Extension+UIColor.swift in Sources */,
+				47B192D92E0D91E700B2A01F /* Animation.swift in Sources */,
 				473E8BD02E06023800B7B0E3 /* TaskModel.swift in Sources */,
 				47A435202E0B54990092BA5A /* Typography.swift in Sources */,
 				47AF93812E01401100DD5126 /* SceneDelegate.swift in Sources */,

@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ToDo_List" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="ToDo_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwb-ZR-uvV">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="105"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17 June 2025" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScS-dO-1zQ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScS-dO-1zQ">
                                         <rect key="frame" x="138.66666666666666" y="74" width="115.66666666666666" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <nil key="textColor"/>
@@ -175,8 +175,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="DateLabel" destination="ScS-dO-1zQ" id="7Cm-5o-Bdo"/>
                         <outlet property="tableView" destination="2H3-Ol-fA1" id="TPz-gM-SNL"/>
+                        <outlet property="titleLabel" destination="ScS-dO-1zQ" id="O3K-RM-MrC"/>
                         <outlet property="titleView" destination="rwb-ZR-uvV" id="ELG-b2-Vyt"/>
                         <segue destination="QIw-2p-khd" kind="presentation" identifier="settingsSegue" modalPresentationStyle="overCurrentContext" id="94Q-NC-siv"/>
                     </connections>
