@@ -12,11 +12,25 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTitleLabel: UILabel!
     @IBOutlet weak var appLabel: UILabel!
     @IBOutlet weak var modalView: UIView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        // Do any additional setup after loading the view.
+        let window = UIApplication.shared.connectedScenes.flatMap { ($0 as? UIWindowScene)?.windows ?? [] }.first{$0.isKeyWindow }
+        if let window = window {
+            switch window.overrideUserInterfaceStyle {
+            case .light: 
+                segmentControl.selectedSegmentIndex = 0
+            case .dark :
+                segmentControl.selectedSegmentIndex = 1
+            case .unspecified:
+                segmentControl.selectedSegmentIndex = 2
+            @unknown default:
+                segmentControl.selectedSegmentIndex = 2
+                
+            }
+        }
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

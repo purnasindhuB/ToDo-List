@@ -259,6 +259,7 @@
                     <connections>
                         <outlet property="appLabel" destination="ovN-mQ-r7M" id="0iL-dW-GAn"/>
                         <outlet property="modalView" destination="rDT-Za-tbI" id="O3A-gB-lsM"/>
+                        <outlet property="segmentControl" destination="1UZ-d3-0n0" id="2Zp-w3-laa"/>
                         <outlet property="settingsTitleLabel" destination="Vtf-kH-Mp7" id="UVn-gv-5oG"/>
                     </connections>
                 </viewController>
