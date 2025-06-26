@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         view.addSubview(addBtn)
         NotificationCenter.default.addObserver(self, selector: #selector(createTask(_:)), name: notificationName, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateTask(_:)), name:  NSNotification.Name("com.sindhu.editTask") , object: nil)
-        DateLabel.text = "\(dateFormatter.string(from: Date()))"
+        DateLabel.text = "Tasks"
         DateLabel.font = UIFont.style(.h1)
     }
     
