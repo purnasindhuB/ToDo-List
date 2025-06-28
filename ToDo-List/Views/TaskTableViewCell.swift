@@ -60,14 +60,14 @@ class TaskTableViewCell: UITableViewCell {
     func configureUI(withTask task:Task,delegate : TaskTableViewDelegate?){
         stripView.backgroundColor = task.category.color
         categoryLabel.text = task.category.rawValue
-        categoryLabel.font = UIFont.style(.body)
+        categoryLabel.font = UIFont.appFont(for: .body)
         captionLabel.text = task.caption
-        captionLabel.font = UIFont.style(.body)
+        captionLabel.font = UIFont.appFont(for: .body)
         categoryLabel.textColor = task.category.color
         categoryContainerView.backgroundColor = task.category.backgroundColor
         isCompleteImageView.image = task.isCompleted ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "circle")
         dateLabel.text = dateFormatter.string(from: task.constantDate)
-        dateLabel.font = UIFont.style(.formLabel)
+        dateLabel.font = UIFont.appFont(for: .label)
         selectionStyle = .none
         isCompleteImageView.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(toggleApperance))

@@ -6,11 +6,22 @@
 //
 
 import UIKit
-protocol HandleCloseModuleDelegate: AnyObject {
-    func closeModule()
+
+//TODO: - Move to separte protocol's class
+///NewTaskDelegate links the NewTaskVC and the NewTaskModalView .
+/// This helps the NewTaskViewController know when to dismiss when the x btn is tapped on the  NewTaskModalView and to present the error alert
+protocol NewTaskDelegate: AnyObject {
+    ///Dismiss the NewTaskController . called when x button tappen on NewModalView
+    func closeView()
+    /**
+     This presents an error alert when the user enters invalid input
+    - Parameters:
+     - title : This is the title of error alert
+     - message : A short description of what went wrong
+     **/
     func presentErrorAlert(title:String,message:String)
 }
-
+///This class is reponsible for creating new task
 class NewTaskViewController: UIViewController{
     
     lazy var modalView : NewTaskModelView = {
@@ -22,8 +33,15 @@ class NewTaskViewController: UIViewController{
         return modelView
     }()
     
+    /// The task being edited. If `nil`, a new task is being created.
     private  var task : Task?
     
+    /**
+     This creates the NewTaskViewContreoller
+     - Parameters :
+        - task : if a task is being edited , the task shlould be passed, If a new task is being created task shld be nil.
+     - Returns : NewTaskViewController with a NewTaskModalView for the user to edit or create a task
+     **/
     init(task:Task? = nil) {
         super.init(nibName: nil, bundle: nil)
         modalTransitionStyle = .crossDissolve
@@ -45,13 +63,12 @@ class NewTaskViewController: UIViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        UIView.animate(springDuration: 0.35, initialSpringVelocity: 1, delay: 0, options: [.curveEaseInOut]){
-//        UIView.animate(withDuration: 0.25, delay: 0,options: [.curveEaseOut] ) {
-            self.modalView.transform = CGAffineTransform.identity
+        modalView.scaleUpAnimation()
         }
     }
-}
-extension NewTaskViewController : HandleCloseModuleDelegate {
+
+//MARK: - Conforms to New Task Delegate
+extension NewTaskViewController : NewTaskDelegate {
     func presentErrorAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
@@ -59,7 +76,7 @@ extension NewTaskViewController : HandleCloseModuleDelegate {
         present(alert, animated: true)
     }
     
-    func closeModule() {
+    func closeView() {
         dismiss(animated: true)
     }
 }

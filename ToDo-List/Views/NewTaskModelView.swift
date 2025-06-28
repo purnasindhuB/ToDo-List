@@ -129,7 +129,7 @@ extension NewTaskModelView :UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "Add caption ...."
-            textView.font = UIFont(type: .medium, size: .theme(.caption))
+            textView.font = UIFont(weight: .medium, size: .style(.caption))
             textView.textColor = UIColor.placeholderText
         }
     }
@@ -162,7 +162,7 @@ extension NewTaskModelView : UIPickerViewDelegate{
         var pickerLabel : UILabel? = view as? UILabel
         if pickerLabel == nil {
             pickerLabel = UILabel()
-            pickerLabel?.font = UIFont(type: .semiBold, size: .theme(.body))
+            pickerLabel?.font = UIFont(weight: .semiBold, size: .style(.body))
             pickerLabel?.textAlignment = .center
         }
         let category = Category.allCases[row]

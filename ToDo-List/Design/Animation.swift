@@ -9,7 +9,7 @@ import UIKit
 
 extension UIView {
 
-    // 1. Scale-Up Animation (Springy Pop)
+    /// 1. Scale-Up Animation (Springy Pop)
     func scaleUpAnimation() {
         self.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         UIView.animate(
@@ -25,7 +25,7 @@ extension UIView {
         )
     }
 
-    // 2. Pulse Animation (Shrink and bounce back)
+    /// 2. Pulse Animation (Shrink and bounce back)
     func pulseAnimation() {
         let pulseAnimation = CABasicAnimation(keyPath: "transform.scale")
         pulseAnimation.duration = 0.2
@@ -36,7 +36,7 @@ extension UIView {
         layer.add(pulseAnimation, forKey: "pulse")
     }
 
-    // 3. Shake Animation (Left and Right)
+    /// 3. Shake Animation (Left and Right)
     func shakeAnimation() {
         let shakeAnimation = CABasicAnimation(keyPath: "position")
         shakeAnimation.duration = 0.1

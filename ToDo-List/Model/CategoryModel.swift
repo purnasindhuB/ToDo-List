@@ -8,8 +8,11 @@
 import Foundation
 import UIKit
 
+/// Represents a task category in the ToDo list.
 enum Category : String, CaseIterable {
     case work = "Work", study = "Study", excercise = "Excerise"
+    
+    /// Returns the primary color associated with the category.
     var color : UIColor {
         switch self {
         case .work:
@@ -20,6 +23,8 @@ enum Category : String, CaseIterable {
             return UIColor.excerciseColor
         }
     }
+    
+    /// Returns a lighter background color variant for the category.
     var backgroundColor : UIColor {
         switch self {
         case .work:

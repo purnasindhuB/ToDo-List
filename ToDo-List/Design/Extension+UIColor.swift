@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+/// Represents a task category in the ToDo list.
 extension UIColor {
     static var workColor: UIColor {
         return UIColor(named: "work")!
@@ -15,12 +15,16 @@ extension UIColor {
     static var workBackgroundColor: UIColor {
         return UIColor(named: "work")!.withAlphaComponent(0.2)
     }
-    static var excerciseColor: UIColor {
-        return UIColor(named: "excercise")!
-    }
-    static var excerciseBackgroundColor: UIColor {
-        return UIColor(named: "excercise")!.withAlphaComponent(0.2)
-    }
+    /// The primary color used for "Exercise" category tasks.
+       static var excerciseColor: UIColor {
+           return UIColor(named: "excercise")!
+       }
+
+       /// The background color used for "Exercise" category tasks with reduced opacity.
+       static var excerciseBackgroundColor: UIColor {
+           return UIColor(named: "excercise")!.withAlphaComponent(0.2)
+       }
+
 
     static var studyColor: UIColor {
         return UIColor(named: "study")!
