@@ -1,5 +1,5 @@
 //
-//  Typography.swift
+//  UIFont+Styles.swift
 //  ToDo-List
 //
 //  Created by Purnasindhu-749 on 25/06/25.
@@ -8,98 +8,113 @@
 import Foundation
 import UIKit
 
+/// Extension to `UIFont` that allows custom typography using predefined styles.
 extension UIFont {
     
-    convenience init(type:FontType,size:FontSize) {
-        self.init(name: type.name, size: size.value)!
+    /// Initializes a custom font using a font weight and size.
+    /// - Parameters:
+    ///   - weight: The custom font weight.
+    ///   - size: The custom size.
+    convenience init(weight: AppFontWeight, size: AppFontSize) {
+        self.init(name: weight.name, size: size.pointSize)!
     }
-    static func style(_ style:FontStyle) -> UIFont{
+    
+    /// Returns a scaled `UIFont` for a given `AppFontStyle`.
+    /// - Parameter style: The style to be applied.
+    /// - Returns: A scaled font suitable for dynamic type.
+    static func appFont(for style: AppFontStyle) -> UIFont {
         return style.font
     }
 }
-enum FontType : String {
-    case assistantSemiBold = "Assistant-SemiBold"
-    case assistantBold = "Assistant-Bold"
-    case assistantMedium = "Assistant-Medium"
-    case assistantExtraLight = "Assistant-ExtraLight"
-    
+
+/// Represents available custom font weights mapped to actual font names.
+enum AppFontWeight: String {
+    case semiBold = "Assistant-SemiBold"
+    case bold = "Assistant-Bold"
+    case medium = "Assistant-Medium"
+    case extraLight = "Assistant-ExtraLight"
 }
 
-extension FontType  {
-    var name : String {
-        return self.rawValue
+extension AppFontWeight {
+    /// The raw font name used in `UIFont(name:size:)`.
+    var name: String {
+        return rawValue
     }
 }
 
-enum FontSize  {
+/// Describes how font sizes are defined.
+enum AppFontSize {
+    /// A custom size defined directly in points.
     case custom(Double)
-    case theme(FontStyle)
+    /// A size derived from a predefined `AppFontStyle`.
+    case style(AppFontStyle)
 }
 
-extension FontSize {
-    var value : Double{
+extension AppFontSize {
+    /// The resolved point size for the font.
+    var pointSize: Double {
         switch self {
-        case .custom(let customSize):
-            return customSize
-        case .theme(let size) :
-            return size.size
+        case .custom(let size):
+            return size
+        case .style(let style):
+            return style.size
         }
     }
 }
 
-enum FontStyle {
-    case h1
-    case secondaryText
+/// Predefined text styles used across the app’s UI.
+enum AppFontStyle {
+    case title
+    case body
     case caption
-    case caption2
-    case buttonTitle
+    case label
+    case button
 }
 
-extension FontStyle {
-    var size :Double {
+extension AppFontStyle {
+    
+    /// Raw font size in points.
+    var size: Double {
         switch self {
-        case .h1:
-            return 20.0
-        case .secondaryText:
-            return 17.0
-        case .caption:
-            return 15.0
-        case .caption2:
-            return 14.0
-        case .buttonTitle:
-            return 17
+        case .title: return 20.0
+        case .body: return 17.0
+        case .caption: return 15.0
+        case .label: return 14.0
+        case .button: return 17.0
         }
     }
     
-    
-    var fontDescription : FontDescription {
+    /// Provides font metadata including weight, size, and system text style.
+    var description: AppFontDescription {
         switch self {
-        case .h1:
-            return FontDescription(font: .assistantBold, size: .theme(.h1), style: .title1)
-        case .secondaryText:
-            return FontDescription(font: .assistantMedium, size: .theme(.secondaryText), style: .body)
+        case .title:
+            return AppFontDescription(font: .bold, size: .style(.title), style: .title1)
+        case .body:
+            return AppFontDescription(font: .medium, size: .style(.body), style: .body)
         case .caption:
-            return FontDescription(font: .assistantExtraLight, size: .theme(.caption), style: .caption1)
-        case .caption2 :
-            return FontDescription(font: .assistantExtraLight, size: .theme(.caption), style: .caption2)
-        case .buttonTitle :
-            return FontDescription(font: .assistantBold, size: .theme(.buttonTitle), style: .subheadline)
+            return AppFontDescription(font: .extraLight, size: .style(.caption), style: .caption1)
+        case .label:
+            return AppFontDescription(font: .extraLight, size: .style(.label), style: .caption2)
+        case .button:
+            return AppFontDescription(font: .bold, size: .style(.button), style: .subheadline)
         }
-        
     }
     
-    var font : UIFont{
-        guard let font = UIFont(name: fontDescription.font.name, size: fontDescription.size.value) else
-        {
-            return UIFont.preferredFont(forTextStyle: fontDescription.style)
+    /// A scaled `UIFont` based on the current style.
+    var font: UIFont {
+        guard let baseFont = UIFont(name: description.font.name, size: description.size.pointSize) else {
+            return UIFont.preferredFont(forTextStyle: description.style)
         }
-        let fontMetrices = UIFontMetrics(forTextStyle: fontDescription.style)
-        return fontMetrices.scaledFont(for: font)
+        return UIFontMetrics(forTextStyle: description.style).scaledFont(for: baseFont)
     }
 }
 
-struct FontDescription{
-    var font:FontType
-    var size:FontSize
-    var style:UIFont.TextStyle
+/// Contains all the properties required to describe a font.
+struct AppFontDescription {
+    /// The custom font weight.
+    var font: AppFontWeight
+    /// The size (fixed or style-based).
+    var size: AppFontSize
+    /// The text style used for scaling (e.g., `.body`, `.caption1`).
+    var style: UIFont.TextStyle
 }

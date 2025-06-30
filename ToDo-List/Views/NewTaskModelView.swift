@@ -85,13 +85,13 @@ class NewTaskModelView: UIView {
             let category = Category.allCases[selectedRow]
             if let task = task {
                 
-                let task = Task(id: task.id, category: category, caption: caption, constantDate: task.constantDate, isCompleted: task.isCompleted)
+                let task = Task(id: task.id, category: category, caption: caption, createdDate: task.createdDate, isComplete: task.isComplete)
                 let userInfo = ["updateTask":task]
                 NotificationCenter.default.post(name: NSNotification.Name("com.sindhu.editTask") , object: self, userInfo: userInfo)
             }
             else {
                 let taskId = UUID().uuidString
-                let task = Task(id: taskId,category: category, caption: caption, constantDate: Date(), isCompleted: false)
+                let task = Task(id: taskId,category: category, caption: caption, createdDate: Date(), isComplete: false)
                 let userInfo = ["newTask":task]
                 NotificationCenter.default.post(name: NSNotification.Name("com.sindhu.createTask") , object: self, userInfo: userInfo)
             }

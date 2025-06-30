@@ -47,8 +47,8 @@ class TaskTableViewCell: UITableViewCell {
         captionLabel.font = UIFont.style(.secondaryText)
         categoryLabel.textColor = task.category.color
         categoryContainerView.backgroundColor = task.category.backgroundColor
-        isCompleteImageView.image = task.isCompleted ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "circle")
-        dateLabel.text = dateFormatter.string(from: task.constantDate)
+        isCompleteImageView.image = task.isComplete ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "circle")
+        dateLabel.text = dateFormatter.string(from: task.createdDate)
         dateLabel.font = UIFont.style(.caption2)
         selectionStyle = .none
         isCompleteImageView.isUserInteractionEnabled = true
@@ -59,8 +59,8 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     @objc func toggleApperance (){
-        task.isCompleted.toggle()
-        delegate?.markTask(id: task.id, complete: task.isCompleted)
+        task.isComplete.toggle()
+        delegate?.markTask(id: task.id, complete: task.isComplete)
     }
     
     func setupUI(){
