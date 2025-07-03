@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 /// A model representing a single task in the ToDo list.
 struct Task {
     let id : String
