@@ -10,12 +10,12 @@ import UIKit
 protocol TaskTableViewDelegate : AnyObject{
     /// Called when the edit button is tapped for a task.
     /// - Parameter id: The ID of the task to be edited.
-    func editTask(id:String)
+    func editTask(id:Int)
     /// Called when a task is marked as complete or incomplete.
     /// - Parameters:
     ///   - id: The ID of the task.
     ///   - complete: A boolean indicating the new completion state.
-    func markTask(id:String,complete:Bool)
+    func markTask(id:Int,complete:Bool)
 }
 
 /// A `UITableViewCell` subclass used to display a task in the task list.
@@ -34,7 +34,7 @@ class TaskTableViewCell: UITableViewCell {
     static let identifier = "taskCell"
     /// Delegate to notify when actions are performed on the cell.
     private weak var delegate : TaskTableViewDelegate?
-    private var task : Task!
+    private var task : TaskModel!
     
     /// Formatter used to display the task's date in readable format.
     private var dateFormatter : DateFormatter {
@@ -50,23 +50,24 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     @IBAction func editOptionTapped(_ sender: Any) {
-        delegate?.editTask(id: task.id)
+        delegate?.editTask(id: task.id.hashValue)
     }
     
     /// Configures the cell UI with a `Task` and a delegate.
     /// - Parameters:
     ///   - task: The task to display.
     ///   - delegate: The delegate to notify on user actions.
-    func configureUI(withTask task:Task,delegate : TaskTableViewDelegate?){
-        stripView.backgroundColor = task.category.color
-        categoryLabel.text = task.category.rawValue
+    func configureUI(withTask task:TaskModel,delegate : TaskTableViewDelegate?){
+        let category = Category(rawValue: task.category)!
+        stripView.backgroundColor = category.color
+        categoryLabel.text = category.rawValue
         categoryLabel.font = UIFont.appFont(for: .body)
         captionLabel.text = task.caption
         captionLabel.font = UIFont.appFont(for: .body)
-        categoryLabel.textColor = task.category.color
-        categoryContainerView.backgroundColor = task.category.backgroundColor
-        isCompleteImageView.image = task.isCompleted ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "circle")
-        dateLabel.text = dateFormatter.string(from: task.constantDate)
+        categoryLabel.textColor = category.color
+        categoryContainerView.backgroundColor = category.backgroundColor
+        isCompleteImageView.image = task.isComplete ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "circle")
+        dateLabel.text = dateFormatter.string(from: task.createdDate)
         dateLabel.font = UIFont.appFont(for: .label)
         selectionStyle = .none
         isCompleteImageView.isUserInteractionEnabled = true
@@ -78,8 +79,8 @@ class TaskTableViewCell: UITableViewCell {
     
     /// Toggles the task's completion status and notifies the delegate.
     @objc func toggleApperance (){
-        task.isCompleted.toggle()
-        delegate?.markTask(id: task.id, complete: task.isCompleted)
+        task.isComplete.toggle()
+        delegate?.markTask(id: task.id.hashValue, complete: task.isComplete)
     }
     
     /// Sets up the initial appearance of UI elements.

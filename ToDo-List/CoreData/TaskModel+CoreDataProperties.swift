@@ -9,9 +9,9 @@
 import Foundation
 import CoreData
 
-
+/// Extension to define Core Data properties and fetch request for TaskModel
 extension TaskModel {
-
+    // Generates a fetch request to retrieve TaskModel entities
     @nonobjc public class func fetchRequest() -> NSFetchRequest<TaskModel> {
         return NSFetchRequest<TaskModel>(entityName: "TaskModel")
     }

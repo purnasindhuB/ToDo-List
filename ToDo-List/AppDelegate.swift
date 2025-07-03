@@ -10,8 +10,15 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    /// Core Data stack initialized here for shared access throughout the app
+lazy var coreDataStack = CoreDataStack(modelName: "ToDoList")
+    static let sharedAppDelegate : AppDelegate = {
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("Cannot get shared app delegate")
+        }
+        return delegate
+    }()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true

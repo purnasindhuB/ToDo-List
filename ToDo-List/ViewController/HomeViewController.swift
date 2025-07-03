@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    var tasks : [Task] = []
+    var tasks : [TaskModel] = []
     //We create the button programatically because we cannot add the btn as a subview of tableview in the interface builder.
     lazy var addBtn  : UIButton = {
         let button = UIButton()
@@ -79,7 +79,7 @@ class HomeViewController: UIViewController {
     /// - notifcation : The Notification object fron the com.sindhu.editTask
     @objc func editTask(_ notification : Notification?) {
         guard let userInfo = notification?.userInfo,
-              let updatedTask = userInfo["updateTask"] as? Task else
+              let updatedTask = userInfo["updateTask"] as? TaskModel else
         {
             return
         }
@@ -98,7 +98,7 @@ class HomeViewController: UIViewController {
     /// - notifcation : The Notification object fron the com.sindhu.createTask
     @objc func createTask(_ notification : Notification) {
         guard let userInfo = notification.userInfo ,
-              let task =  userInfo["newTask"] as? Task else {
+              let task =  userInfo["newTask"] as? TaskModel else {
             return
         }
         tasks.append(task)
@@ -110,10 +110,10 @@ class HomeViewController: UIViewController {
 // MARK: - Methods conforming to UITableViewDelegate
 extension HomeViewController :UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        let task = tasks[indexPath.row]
-        //        let taskVC = NewTaskViewController(task: task)
-        //        present(taskVC, animated: true)
-        //
+//                let task = tasks[indexPath.row]
+//                let taskVC = NewTaskViewController(task: task)
+//                present(taskVC, animated: true)
+        
     }
 }
 
@@ -138,14 +138,17 @@ extension HomeViewController : UITableViewDataSource {
             tasks.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+        else if editingStyle == .insert {
+            print("inserted")
+        }
     }
 }
 
 // MARK: - Methods conforming to TaskTableViewDelegate
 extension HomeViewController : TaskTableViewDelegate {
-    func editTask(id: String) {
+    func editTask(id: Int) {
         let task = tasks.first { task in
-            task.id == id
+            task.id.hashValue == Int(id)
         }
         guard let task = task else {
             return
@@ -154,14 +157,14 @@ extension HomeViewController : TaskTableViewDelegate {
         present(taskVC, animated: true)
     }
     
-    func markTask(id: String, complete: Bool) {
+    func markTask(id: Int, complete: Bool) {
         let taskId = tasks.firstIndex { task in
-            task.id == id
+            task.id.hashValue == Int(id)
         }
         guard let taskId = taskId else {
             return
         }
-        tasks[taskId].isCompleted = complete
+        tasks[taskId].isComplete = complete
         tableView.reloadData()
     }
     

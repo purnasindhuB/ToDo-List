@@ -10,14 +10,16 @@ import CoreData
 
 class CoreDataStack {
     private let modelName : String
+    /// Provides the main context used to interact with Core Data
     lazy var managedContext : NSManagedObjectContext = {
         return persistentContainer.viewContext
     }()
-    
+    /// Initializes CoreDataStack with the specified model name
     init(modelName:String) {
         self.modelName = modelName
     }
     
+    /// Sets up the NSPersistentContainer which loads the Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
       
         let container = NSPersistentContainer(name: "ToDoList")
@@ -30,7 +32,8 @@ class CoreDataStack {
         return container
     }()
 
-
+///Responsible for handling changes in manageContext happens with NSPersistenceCoordinator
+    /// Saves changes in the managedContext if there are any unsaved changes
     func saveContext () {
         if managedContext.hasChanges {
             do {

@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+// TaskModel class representing the Core Data entity; inherits from NSManagedObject
 @objc(TaskModel)
 public class TaskModel: NSManagedObject {
 

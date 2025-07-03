@@ -30,13 +30,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iv2-nD-WVS">
-                    <rect key="frame" x="25" y="30" width="91" height="29"/>
+                    <rect key="frame" x="25" y="30" width="95" height="25.666666666666671"/>
                     <fontDescription key="fontDescription" name="Assistant-Bold" family="Assistant" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apt-Ka-Fmh">
-                    <rect key="frame" x="656" y="22" width="45" height="45"/>
+                    <rect key="frame" x="656" y="20.333333333333329" width="45" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="0Bz-jG-E06"/>
                         <constraint firstAttribute="width" constant="45" id="LQO-C5-LOA"/>
@@ -52,13 +52,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBw-YJ-cW8">
-                    <rect key="frame" x="25" y="79" width="43" height="17.333333333333329"/>
+                    <rect key="frame" x="25" y="75.666666666666671" width="46" height="15.333333333333329"/>
                     <fontDescription key="fontDescription" name="Assistant-Medium" family="Assistant" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="far-sE-qTV">
-                    <rect key="frame" x="25" y="106.33333333333331" width="676" height="100"/>
+                    <rect key="frame" x="25" y="101" width="676" height="100"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="5QR-ZG-arR"/>
@@ -68,19 +68,19 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNl-69-jj7">
-                    <rect key="frame" x="25" y="221.33333333333334" width="49" height="17.333333333333343"/>
+                    <rect key="frame" x="25.000000000000004" y="216" width="53.333333333333343" height="15.333333333333343"/>
                     <fontDescription key="fontDescription" name="Assistant-Medium" family="Assistant" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKz-Lp-6Gf">
-                    <rect key="frame" x="25" y="258.66666666666669" width="676" height="90"/>
+                    <rect key="frame" x="25" y="251.33333333333337" width="676" height="90"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="aj3-VB-vhC"/>
                     </constraints>
                 </pickerView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dt8-BF-sOg" customClass="ShadowButton" customModule="ToDo_List" customModuleProvider="target">
-                    <rect key="frame" x="25" y="378.66666666666669" width="676" height="40"/>
+                    <rect key="frame" x="25" y="371.33333333333331" width="676" height="40"/>
                     <color key="backgroundColor" systemColor="linkColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="NTo-De-3kw"/>
@@ -124,7 +124,7 @@
     </objects>
     <designables>
         <designable name="dt8-BF-sOg">
-            <size key="intrinsicContentSize" width="53" height="30"/>
+            <size key="intrinsicContentSize" width="49" height="30"/>
         </designable>
     </designables>
     <resources>

@@ -17,12 +17,12 @@ extension UIColor {
     }
     /// The primary color used for "Exercise" category tasks.
        static var excerciseColor: UIColor {
-           return UIColor(named: "excercise")!
+           return UIColor(named: "exercise")!
        }
 
        /// The background color used for "Exercise" category tasks with reduced opacity.
        static var excerciseBackgroundColor: UIColor {
-           return UIColor(named: "excercise")!.withAlphaComponent(0.2)
+           return UIColor(named: "exercise")!.withAlphaComponent(0.2)
        }
 
 

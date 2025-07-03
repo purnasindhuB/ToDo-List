@@ -23,7 +23,7 @@ class NewTaskModelView: UIView {
     weak var delegate : NewTaskDelegate?
     
     /// The task being edited, or `nil` for new task.
-    private  var task : Task?
+    private  var task : TaskModel?
     
     /// The current caption in the text view.
     var caption : String  {
@@ -35,7 +35,7 @@ class NewTaskModelView: UIView {
     /// - Parameters:
     ///   - frame: The view's frame.
     ///   - task: The task to be edited, or nil to create a new one.
-    init(frame : CGRect,task: Task?){
+    init(frame : CGRect,task: TaskModel?){
         super.init(frame: frame)
         self.task = task
         initSubViews()
@@ -62,7 +62,8 @@ class NewTaskModelView: UIView {
         if let task = task {
             descrptionTextView.text = task.caption
             descrptionTextView.textColor = UIColor.label
-            if   let row = Category.allCases.firstIndex(of: task.category){
+            let taskCategory = Category(rawValue: task.category)!
+            if   let row = Category.allCases.firstIndex(of: taskCategory){
                 categoryPickerView.selectRow(row, inComponent: 0, animated: true)
             }
         }
@@ -99,15 +100,18 @@ class NewTaskModelView: UIView {
         let selectedRow = categoryPickerView.selectedRow(inComponent: 0)
         let category = Category.allCases[selectedRow]
         if let task = task {
-            
-            let task = Task(id: task.id, category: category, caption: caption, constantDate: task.constantDate, isCompleted: task.isCompleted)
             let userInfo = ["updateTask":task]
             NotificationCenter.default.post(name: NSNotification.Name("com.sindhu.editTask") , object: self, userInfo: userInfo)
         }
         else {
-            let taskId = UUID().uuidString
-            let task = Task(id: taskId,category: category, caption: caption, constantDate: Date(), isCompleted: false)
-            let userInfo = ["newTask":task]
+            let managedContext = AppDelegate.sharedAppDelegate.coreDataStack.managedContext
+            let newTask = TaskModel(context: managedContext)
+            newTask.category = category.rawValue
+            newTask.caption = caption
+            newTask.createdDate = Date()
+            newTask.isComplete = false
+            AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
+            let userInfo = ["newTask":newTask]
             NotificationCenter.default.post(name: NSNotification.Name("com.sindhu.createTask") , object: self, userInfo: userInfo)
         }
         delegate?.closeView()
